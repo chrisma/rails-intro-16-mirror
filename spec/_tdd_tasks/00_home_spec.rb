@@ -15,5 +15,4 @@ describe "Front page", :type => :feature do
       expect(page).to have_text("Paper Management System")
     end
   end
-  
 end

@@ -1,7 +1,7 @@
 require 'uri'
 
 class Author < ActiveRecord::Base
-  #has_and_belongs_to_many :papers
+  has_and_belongs_to_many :papers
 
   validates :last_name, presence: true
   validate :homepage_url
