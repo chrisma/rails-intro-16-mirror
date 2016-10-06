@@ -155,7 +155,7 @@ describe "Paper page", :type => :feature do
     init_message
 
     @paper = FactoryGirl.create :paper_tdd
-    Given "a paper titled '#{@paper.title}'"
+    Given "a paper entitled '#{@paper.title}'"
   end
   
   it "should display paper details" do
@@ -186,7 +186,7 @@ describe "Paper index page", :type => :feature do
   it "should list title, venue, and year of all papers" do
     test_run do
       @paper = FactoryGirl.create :paper_tdd
-      Given "a paper titled '#{@paper.title}'"
+      Given "a paper entitled '#{@paper.title}'"
     
       When "a user visits the papers index page"
       
@@ -223,7 +223,7 @@ describe "Paper index page", :type => :feature do
   it "should link to paper page" do
     test_run do
       @paper = FactoryGirl.create :paper_tdd
-      Given "a paper titled '#{@paper.title}'"
+      Given "a paper"
     
       When "users visits the papers index page"
       visit papers_path
@@ -270,7 +270,7 @@ describe "Edit paper page", :type => :feature do
     init_message
     
     @paper = FactoryGirl.create :paper_tdd
-    Given "a paper titled '#{@paper.title}'"
+    Given "a paper"
   end
   
   it "should save changes" do
@@ -301,7 +301,7 @@ describe "Paper index page", :type => :feature do
   it "should link to edit paper page" do
     test_run do
       @paper = FactoryGirl.create :paper_tdd
-      Given "a paper titled '#{@paper.title}'"
+      Given "a paper"
     
       When "users visit the papers index page"
       visit papers_path
@@ -320,7 +320,7 @@ describe "Paper index page", :type => :feature do
   it "should have a link to delete a paper" do
     test_run do
       @paper = FactoryGirl.create :paper_tdd
-      Given "a paper titled '#{@paper.title}'"
+      Given "a paper"
     
       When "users visit the papers index page"
       visit papers_path

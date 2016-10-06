@@ -49,10 +49,10 @@ module TddHelpers
     yield
   rescue  RSpec::Expectations::ExpectationNotMetError => e
     msg = e.message.strip.capitalize
-    fail get_bdd_message + "\n" + msg
-  rescue Exception => e
+    raise e, get_bdd_message + "\n" + msg, e.backtrace
+  rescue StandardError => e
     puts e.backtrace
-    fail get_bdd_message + "\nGot " + e.class.name + ": " + e.message
+    raise e, get_bdd_message + "\nGot " + e.class.name + ": " + e.message, e.backtrace
   end
   
   def fill_author(first_name, last_name, homepage)

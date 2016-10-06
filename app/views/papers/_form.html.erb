@@ -24,13 +24,14 @@
     <%= f.number_field :year %>
   </div>
 
- <%# 5.times do |i| %>
-    <%#*<div class="field">%>
-       <%#= f.label "Author "+(i+1).to_s %>
-       <%#= collection_select :paper, :author_ids, Author.all, :id, :name, {selected: @paper.author_ids[i], include_blank: '(none)'}, {name: "paper[author_ids][]", id: "paper_author_id_"+(i+1).to_s } %>
-       <%#*<br>%>
-    <%#*</div>%>
-  <%# end %>
+ <% 5.times do |i| %>
+    <% authors = Author.all %>
+    <div class="field">
+       <%= f.label "Author "+(i+1).to_s %>
+       <%= collection_select :paper, :author_ids, authors, :id, :name, {selected: @paper.author_ids[i], include_blank: '(none)'}, {name: "paper[author_ids][]", id: "paper_author_id_"+(i+1).to_s } %>
+       <br>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
