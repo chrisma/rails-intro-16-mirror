@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @author.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @author.last_name %>
+</p>
+
+<p>
+  <strong>Homepage:</strong>
+  <%= @author.homepage %>
+</p>
+
+<p>
+<strong>Papers:</strong>
+</p>
+<%# @author.papers.each do |paper| %>
+  <%#= link_to paper.title, paper %>
+<%# end %>
+
+<br>
+<br>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

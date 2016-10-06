@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @paper.title %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @paper.venue %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @paper.year %>
+</p>
+
+<%# 5.times.each do |i| %>
+  <%# unless @paper.authors[i].nil? %>
+    <%#*<p>%>
+      <%#*<strong>Author <%= i+1 %>:</strong>%>
+      <%#= link_to @paper.authors[i].name, author_path(@paper.authors[i]) %>
+    <%#*</p>%>
+  <%# end %>
+<%# end %>
+
+
+<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Back', papers_path %>
